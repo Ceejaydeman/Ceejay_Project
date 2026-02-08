@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library</title>
+  <style>
+    /* Reset & base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      padding: 60px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background-color: rgba(44, 62, 80, 0.8);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-weight: bold;
+      font-size: 1.1em;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ecf0f1;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    .nav-links li a:hover {
+      color: #1abc9c;
+    }
+
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin-bottom: 4px;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* Hero image/banner */
+    .hero {
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-section {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .contact-info {
+      flex: 1 1 300px;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .contact-info ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .contact-info ul li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .contact-info ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #1abc9c;
+      font-size: 1.5em;
+      line-height: 1;
+    }
+
+    .contact-image {
+      flex: 1 1 300px;
+    }
+
+    .contact-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #34495e;
+        width: 100%;
+        display: none;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .contact-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Library</h1>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Address</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO IMAGE -->
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1601582585152-3b8a1d92c69a?auto=format&fit=crop&w=1500&q=80" alt="Library interior" />
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>Feel free to reach out with any questions, suggestions, or feedback. Here’s what to include for easier communication:</p>
+      <ul>
+        <li>Full Name</li>
+        <li>Email Address</li>
+        <li>Phone Number</li>
+        <li>Preferred Method of Contact (Email, Call, SMS)</li>
+        <li>Reason for Inquiry (e.g., Book Reservation, Membership, Support)</li>
+        <li>Additional Comments or Details</li>
+      </ul>
+    </div>
+    <div class="contact-image">
+      <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=800&q=80" alt="Bookshelf" />
+    </div>
+  </section>
+
+  <!-- JS for mobile menu toggle -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

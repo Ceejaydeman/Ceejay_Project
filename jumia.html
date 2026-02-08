@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: red;
+        }
+        nav li{
+            list-style: none;
+        }
+        nav a{
+            text-decoration: none;
+            padding: 15px;
+        }
+        nav a:hover{
+            color: black;
+            text-decoration: underline;
+            text-transform: lowercase;
+            font-size: 20px; 
+        }
+        h1:hover{
+            color: yellow;
+        }
+        .hero{
+background-image: url(smile.jpeg); 
+background-repeat: no-repeat;     
+background-size: cover;     
+            padding: 100px;
+            text-align: center;
+            color: whitesmoke;
+        }
+        .hero button{
+            color: white;
+            background-color: red;
+            padding: 10px;
+            border-radius: 50px;
+            border-color: white;
+        }
+        .main{
+        padding-top: 50px;
+            display: flex;
+            gap: 50px;
+            padding: 40px;
+           background-color: aqua;
+           padding-right: 200px;
+           
+        }
+        .product img{
+            width: 200px;
+            height: 150px;
+             box-shadow: 30px;
+            background-color: red;
+            border-radius: 45px;
+        }
+         .product1 img{
+            width: 200px;
+            height: 150px;
+            box-shadow: 30px;
+            background-color: blue;
+            border-radius: 45px;
+            
+        }
+         .product2 img{
+            width: 200px;
+            height: 150px;
+             box-shadow: 30px;
+            background-color: black;
+            border-radius: 45px;
+            
+        }
+         .product3 img{
+            width: 200px;
+            height: 150px;
+             box-shadow: 30px;
+            background-color: green;
+            border-radius: 45px;
+         }
+    </style>
+</head>
+<body>
+      <header>
+        <h1>Jumia</h1>
+        <nav>
+            <li>
+                <a href=>account</a>
+                <a href="">help</a>
+                <a href="">cart</a>
+            </li>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Welcome to Jumia</h1>
+        <p>Where users get cheap produt.</p>
+        <button>Get Started</button>
+
+
+    </div>
+
+    <div class="main">
+<div class="product">
+    <img src="https://www.bing.com/th/id/OIP.37tcNpX7dRyQGbUyAjYZgAHaE8?w=218&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="">
+    <p>This is the first product</p>
+
+</div>
+<div class="product1">
+    <img src="https://th.bing.com/th/id/OIP.29GW-JI1dW2mvtNrl0S1CwHaE5?w=284&h=188&c=7&r=0&o=7&pid=1.7&rm=3" alt="">
+    <p>This is the first product</p>
+
+</div>
+<div class="product2">
+    <img src="https://th.bing.com/th/id/OIP.Vui1gAtnHmqJTYC5Xi0kMgHaFC?w=307&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="">
+    <p>This is the first product</p>
+
+</div>
+<div class="product3">
+    <img src="data:image/webp;base64,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" alt="">
+    <p>This is the first product</p>
+
+</div>
+    </div>
+</body>
+</html>
